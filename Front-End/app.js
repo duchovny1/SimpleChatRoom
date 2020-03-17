@@ -39,9 +39,7 @@ function createMessage(){
          alert('you cannot choose empty message!')
          return;
      }
-     
-     console.log(username)
-     console.log(message)
+
      $.post({
         url: appUrl + 'messages/create',
         headers: {
@@ -56,8 +54,8 @@ function createMessage(){
         }
     });
 
-    $('#message').text("");
-
+    $('#message').val("");
+    
 }
 
 
@@ -85,3 +83,4 @@ function resetUsername(){
 
 $('#reset-data').hide();
 loadMessages();
+setInterval(loadMessages, 100);
